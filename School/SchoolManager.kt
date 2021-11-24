@@ -20,4 +20,19 @@ class SchoolManager(
             println("O curso foi registrado com sucesso")
         }
     }
+
+    fun excluirCurso(codigoDoCurso: Int) {
+        if (listaCodigoCursos.contains(codigoDoCurso)) {
+            listaCodigoCursos.remove(codigoDoCurso)
+            for (item in listaTotalCurso) {
+                if (item.codigoDoCurso == codigoDoCurso) {
+                    listaTotalCurso.remove(item)
+                }
+                break
+            }
+            println("O curso foi excluído da lista de cursos disponíveis")
+        } else {
+            println("O curso não está registrado!")
+        }
+    }
 }
