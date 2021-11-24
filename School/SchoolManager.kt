@@ -116,5 +116,18 @@ class SchoolManager(
         }
     }
 
+    fun matriculaAluno(codigoAluno: Int, codigCurso: Int) {
+        for (aluno in listaTotalAlunos) {
+            if (aluno.codigoAluno == codigoAluno) {
+                for (curso in listaTotalCurso) {
+                    if (curso.codigoDoCurso == codigCurso && curso.matricularAluno(aluno)) {
+                        val matricula = Matricula(aluno, curso)
+                        listaMatricula.add(matricula)
+                        break
+                    }
+                }
+            }
+        }
+    }
 
 }

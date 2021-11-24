@@ -6,7 +6,7 @@ class Curso(
     val maxAlunos: Int,
     var listaAlunos: MutableList<Int?> = mutableListOf()
 ) {
-    fun matricularAluno(umAluno: Aluno): Boolean {
+    open fun matricularAluno(umAluno: Aluno): Boolean {
         var podeAdicionar = false
         if (listaAlunos.size >= maxAlunos) {
             println("Não é possível matricular ${umAluno.nome} no curso de $nomeDoCurso")
