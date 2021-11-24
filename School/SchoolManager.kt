@@ -7,6 +7,7 @@ class SchoolManager(
     var listaTotalCurso: MutableList<Curso> = mutableListOf()
     var listaTotalProfessoresAdjuntos: MutableList<ProfessorAdjunto> = mutableListOf()
     var listaTotalProfessoresTitulares: MutableList<ProfessorTitular> = mutableListOf()
+    var listaTotalAlunos: MutableList<Aluno> = mutableListOf()
 
     fun registrarCurso(
         nomeCurso: String,
@@ -99,4 +100,21 @@ class SchoolManager(
             println("O professor não faz parte do quadro de professores!")
         }
     }
+
+    fun registrarAluno(
+        nome: String,
+        sobrenome: String,
+        codigoAluno: Int
+    ) {
+        if (listaCodigoAlunos.contains(codigoAluno)) {
+            println("O aluno já está registrado")
+        } else {
+            val novoAluno = Aluno(nome, sobrenome, codigoAluno)
+            listaCodigoAlunos.add(novoAluno.codigoAluno)
+            listaTotalAlunos.add(novoAluno)
+            println("O aluno foi registrado com sucesso")
+        }
+    }
+
+
 }
