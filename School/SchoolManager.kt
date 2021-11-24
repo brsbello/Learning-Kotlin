@@ -130,4 +130,35 @@ class SchoolManager(
         }
     }
 
+    fun alocarProfessores(
+        codigoCurso: Int,
+        codigoProfessorTitular: Int,
+        codigoProfessorAdjunto: Int
+    ) {
+        for (curso in listaTotalCurso) {
+            if (curso.codigoDoCurso == codigoCurso) {
+                for (professor in listaTotalProfessoresTitulares) {
+                    if (professor.codigoProfessor == codigoProfessorTitular) {
+                        curso.professorTitular = professor
+                        println("Professor titular alocado!")
+                        break
+                    }
+                }
+            }
+            break
+        }
+        for (curso in listaTotalCurso) {
+            if (curso.codigoDoCurso == codigoCurso) {
+                for (professor in listaTotalProfessoresAdjuntos) {
+                    if (professor.codigoProfessor == codigoProfessorAdjunto) {
+                        curso.professorAdjunto = professor
+                        println("Professor adjunto alocado!")
+                        break
+                    }
+                }
+            }
+            break
+        }
+    }
+
 }
