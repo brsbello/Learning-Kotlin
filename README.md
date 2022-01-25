@@ -1,4 +1,4 @@
-# Learning-Kotlin
+# Learning-Kotlin V1
 
 A pasta School foi o primeiro contato com Kotlin e POO. O objetivo é trazer os conceitos de herança e composição.
 
